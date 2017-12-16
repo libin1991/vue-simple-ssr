@@ -2,17 +2,8 @@
   <div id="app">
     <header class="header">
       <nav class="inner">
-        <router-link to="/" exact>
-          <img class="logo" src="~public/logo-48.png" alt="logo">
-        </router-link>
-        <router-link to="/top">Top</router-link>
-        <router-link to="/new">New</router-link>
-        <router-link to="/show">Show</router-link>
-        <router-link to="/ask">Ask</router-link>
-        <router-link to="/job">Jobs</router-link>
-        <a class="github" href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" rel="noopener">
-          Built with Vue.js
-        </a>
+        <router-link to="/" exact>Home</router-link>
+        <router-link to="/contact">Contact</router-link>
       </nav>
     </header>
     <transition name="fade" mode="out-in">
@@ -69,12 +60,6 @@ a
     font-size .9em
     margin 0
     float right
-
-.logo
-  width 24px
-  margin-right 10px
-  display inline-block
-  vertical-align middle
 
 .view
   max-width 800px

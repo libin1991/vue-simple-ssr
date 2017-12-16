@@ -1,12 +1,12 @@
 <template>
-  <div class="landing">
-    <h1>Landing is here</h1>
+  <div class="contact">
+    <h1>Contact is here</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'landing',
+  name: 'contact',
 
   components: {
   },
@@ -18,9 +18,11 @@ export default {
   },
 
   beforeMount () {
+    this.$bar.finish()
   },
 
   beforeDestroy () {
+    this.$bar.start()
   },
 
   watch: {

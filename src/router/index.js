@@ -3,7 +3,8 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const Landing = () => import('../views/Landing.vue')
+const Landing = () => import('../pages/Landing.vue')
+const Contact = () => import('../pages/Contact.vue')
 
 export function createRouter () {
   return new Router({
@@ -11,7 +12,8 @@ export function createRouter () {
     fallback: false,
     scrollBehavior: () => ({ y: 0 }),
     routes: [
-      { path: '/', component: Landing }
+      { path: '/', component: Landing },
+      { path: '/contact', component: Contact }
     ]
   })
 }
