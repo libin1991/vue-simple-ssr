@@ -1,8 +1,7 @@
 {
-  "name": "vue-hackernews-2.0",
-  "description": "A Vue.js project",
-  "author": "Evan You <yyx990803@gmail.com>",
-  "private": true,
+  "name": "vue-blank-ssr-starter",
+  "description": "Vue.js HN stripped to most basic elements",
+  "author": "Kemal Yalcinkaya <kemalcany@gmail.com>",
   "scripts": {
     "dev": "node server",
     "start": "cross-env NODE_ENV=production node server",
@@ -20,13 +19,12 @@
     "es6-promise": "^4.1.1",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
-    "firebase": "4.8.0",
     "lru-cache": "^4.1.1",
     "route-cache": "0.4.3",
     "serve-favicon": "^2.4.5",
     "vue": "2.5.11",
-    "vue-router": "3.0.1",
     "vue-server-renderer": "2.5.11",
+    "vue-router": "3.0.1",
     "vuex": "3.0.1",
     "vuex-router-sync": "5.0.0"
   },

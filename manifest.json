@@ -1,6 +1,6 @@
 {
-  "name": "Vue Hackernews 2.0",
-  "short_name": "Vue HN",
+  "name": "Vue Blank SSR Starter",
+  "short_name": "Vue Blank SSR",
   "icons": [{
       "src": "/public/logo-120.png",
       "sizes": "120x120",
