@@ -8,6 +8,11 @@ module.exports = merge(base, {
   target: 'node',
   devtool: '#source-map',
   entry: './src/entry-server.js',
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
+  },  
   output: {
     filename: 'server-bundle.js',
     libraryTarget: 'commonjs2'
