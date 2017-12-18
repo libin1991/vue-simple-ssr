@@ -1,6 +1,6 @@
 <template>
   <div class="landing">
-    <h1>Landing is here</h1>
+    <h1>Landing is here JA</h1>
     <div id="image-holder"></div>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
     .then(({default: theDefault}) => {
       Vue.use(theDefault)
       var MyComponent = Vue.extend({
-        template: '<div><p>Amcik</p><progressive-img src="https://unsplash.it/1920/1080?image=10" /></div>',
+        template: '<div><p>Patlican</p><progressive-img src="https://unsplash.it/1920/1080?image=10" /></div>',
         components: {
           // 'progressive-img': theDefault
         },
