@@ -6,7 +6,6 @@ console.log('FBS Deployment: Deploying resources for FBS prod config')
 Promise.resolve()
   .then(copy_dist_under_public)
   .then(copy_ssr_files_under_functions)
-  //.then(console.log('FBS Deployment: Finished successfully. Firebase deploy will be started'))
   .catch(function(errorStack) {
     console.log('FBS Deployment: Error in FBS resource deployment')
     console.log(errorStack);
@@ -34,6 +33,8 @@ function copy_ssr_files_under_functions() {
           fse.copy('dist/vue-ssr-client-manifest.json', 'functions/ssr/vue-ssr-client-manifest.json').then(function(){  
             fse.copy('src/index.template.html', 'functions/ssr/index.template.html').then(function(){
               console.log("FBS Deployment: SSR files (server, client, template) have been copied under functions/ssr");
+              console.log('FBS Deployment: Finished successfully. Firebase deploy will be started')
+              // process.exit(0);
               resolve();
             }).catch(function(errorStack) { resolve(errorStack); });
           }).catch(function(errorStack) { resolve(errorStack); });

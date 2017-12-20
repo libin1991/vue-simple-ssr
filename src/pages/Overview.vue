@@ -1,12 +1,11 @@
 <template>
-  <div class="contact">
-    <h1>Contact is here</h1>
+  <div class="overview">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'contact',
+  name: 'overview',
 
   components: {
   },
