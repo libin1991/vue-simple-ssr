@@ -1,6 +1,6 @@
 <template>
   <div class="landing">
-    <lazy-container/>
+    <lazy-container :src="'https://unsplash.it/1920/1080?image=10'"/>
   </div>
 </template>
 

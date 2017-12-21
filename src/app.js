@@ -20,7 +20,7 @@ export function createApp () {
   // create store and router instances
   const store = createStore()
   const router = createRouter()
-
+  
   // sync the router with the vuex store.
   // this registers `store.state.route`
   sync(store, router)
@@ -33,6 +33,13 @@ export function createApp () {
     store,
     render: h => h(App)
   })
+
+  /*
+  router.beforeEach((to, from, next) => {
+    console.log(app)
+    next()
+  })
+  */
 
   // expose the app, the router and the store.
   // note we are not mounting the app here, since bootstrapping will be

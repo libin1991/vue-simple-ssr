@@ -19,16 +19,17 @@ export default {
   components: {
   },
 
-  props: {
-  },
+  props: [
+    'src'
+  ],
 
   computed: {
   },
 
   mounted () {
-    import('vue-progressive-image').then(({default: module}) => {
+    import(/* webpackChunkName: 'vue-progressive-image' */'vue-progressive-image').then(({default: module}) => {
       Vue.use(module)
-      const Component = Vue.extend({template: '<progressive-img src="https://unsplash.it/1920/1080?image=10" />'})
+      const Component = Vue.extend({template: `<progressive-img src="${this.src}" />`})
       const Instance = new Component()
       Instance.$mount(this.$el.children[0])
     });
