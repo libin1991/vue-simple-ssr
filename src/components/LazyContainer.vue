@@ -10,6 +10,12 @@ import Vue from 'vue'
 export default {
   name: 'lazyContainer',
 
+  data: function () {
+    return {
+      loaded: false // Unused
+    }
+  },  
+
   components: {
   },
 
@@ -20,8 +26,6 @@ export default {
   },
 
   mounted () {
-    this.$bar.finish()
-    
     import('vue-progressive-image').then(({default: module}) => {
       Vue.use(module)
       const Component = Vue.extend({template: '<progressive-img src="https://unsplash.it/1920/1080?image=10" />'})

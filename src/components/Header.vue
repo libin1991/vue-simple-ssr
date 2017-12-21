@@ -2,7 +2,7 @@
   <header class="app-header">
     <nav>
       <router-link to="/" exact>Cornelius Käss</router-link>
-      <router-link to="/overview">Overview</router-link>
+      <router-link to="/overview">+</router-link>
     </nav>
   </header>
 </template>
