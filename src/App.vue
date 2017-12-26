@@ -44,8 +44,11 @@ body
   font-size 15px
   margin 0
   padding-top 55px
+  overflow-y scroll
 a
   text-decoration none
+p
+  margin 0px
 .view
   max-width 720px
   margin 0 auto

@@ -1,16 +1,16 @@
 <template>
   <div class="overview">
-    <lazy-container :src="'https://unsplash.it/1920/1080?image=11'"/>
+    <infinity-grid/>
   </div>
 </template>
 
 <script>
-import LazyContainer from '../components/LazyContainer.vue'
+import InfinityGrid from '../components/InfinityGrid.vue'
 export default {
   name: 'overview',
 
   components: {
-    LazyContainer
+    InfinityGrid
   },
 
   props: {
