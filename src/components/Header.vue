@@ -2,6 +2,7 @@
   <header class="app-header">
     <nav>
       <router-link to="/" exact>Cornelius Käss</router-link>
+      <router-link to="/photo">Photo</router-link>
       <router-link to="/overview">+</router-link>
     </nav>
   </header>
@@ -47,12 +48,12 @@ export default {
     display inline-block
     vertical-align middle
     font-weight 300
-    margin-right 1.8em
+    margin-right 1em
     &:hover
       color red
     &.router-link-active
       color red
-    &:nth-child(2)
+    &:nth-child(3)
       margin-right 0
 @media (max-width 720px)
   .app-header nav

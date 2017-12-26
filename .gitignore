@@ -6,4 +6,5 @@ yarn-error.log
 .idea
 *.iml
 
+firebase-debug.log
 functions/ssr/

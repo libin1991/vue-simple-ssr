@@ -4,6 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const Landing = () => import(/* webpackChunkName: 'pages-landing' */ '../pages/Landing.vue')
+const Photo = () => import(/* webpackChunkName: 'pages-photo' */ '../pages/Photo.vue')
 const Overview = () => import(/* webpackChunkName: 'pages-overview' */'../pages/Overview.vue')
 
 export function createRouter () {
@@ -13,6 +14,7 @@ export function createRouter () {
     scrollBehavior: () => ({ y: 0 }),
     routes: [
       { path: '/', component: Landing },
+      { path: '/photo', component: Photo },
       { path: '/overview', component: Overview }
     ]
   })
