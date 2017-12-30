@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const vueConfig = require('./vue-loader.config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -57,17 +58,30 @@ module.exports = {
     maxEntrypointSize: 300000,
     hints: isProd ? 'warning' : false
   },
-  plugins: isProd
-    ? [
+  plugins: 
+    [
+    ...[ // Global plugins
+      new CopyWebpackPlugin([
+        {
+          from: path.resolve(__dirname, '../static'),
+          to: path.resolve(__dirname, '../dist/static'),
+          ignore: ['.*']
+        }
+      ])      
+    ],  
+    ...(isProd ? // Environment dependent plugins
+      [
         new webpack.optimize.UglifyJsPlugin({
           compress: { warnings: false }
         }),
         new webpack.optimize.ModuleConcatenationPlugin(),
         new ExtractTextPlugin({
           filename: 'common.[chunkhash].css'
-        })
+        })      
       ]
     : [
-        new FriendlyErrorsPlugin()
+        new FriendlyErrorsPlugin()       
       ]
+    )
+  ]
 }

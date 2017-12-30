@@ -44,5 +44,5 @@ export default {
 .lazy-container
   width 100%
   height 100%
-  background url('../assets/images/bg-greystripe.svg')
+  background #eee
 </style>

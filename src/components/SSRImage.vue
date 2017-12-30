@@ -1,5 +1,7 @@
 <template>
-  <div class="ssr-image-container">
+  <div class="ssr-image-container"
+    :style="[{'background': 'url(dist/static/images/Lofi_'+ src + ')'}]"
+  >
     <div class="lazy-placeholder">
     </div>
   </div>
@@ -16,12 +18,6 @@ export default {
     }
   },
 
-  computed: {
-    image () {
-      // return require("dist/./" + this.src)
-    }
-  },
-
   components: {
   },
 
@@ -30,26 +26,11 @@ export default {
   ],
 
   mounted () {
-    
-    console.log(this.src)
-    console.log(this.image)
-    /*
-    import("../assets/images/CatPhoto.jpg").then((x) => {
-      console.log('Hi')
-      console.log(x)
+    import(`../../static/images/${this.src}`).then((x) => {
       const Component = Vue.extend({template: `<img src="${x}" />`})
       const Instance = new Component()
       Instance.$mount(this.$el.children[0])
     });
-    */
-  /*
-    import('vue-progressive-image').then(({default: module}) => {
-      Vue.use(module)
-      const Component = Vue.extend({template: `<progressive-img src="${this.src}" />`})
-      const Instance = new Component()
-      Instance.$mount(this.$el.children[0])
-    });
-    */
   },
 
   methods: {
@@ -61,7 +42,4 @@ export default {
 .ssr-image-container
   width 100%
   height 100px
-  background url('../assets/images/CatPhoto_lofi.jpg')
 </style>
-
-    <img src="../assets/images/CatPhoto.jpg"/>

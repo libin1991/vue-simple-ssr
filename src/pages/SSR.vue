@@ -1,6 +1,6 @@
 <template>
   <div class="ssr">
-    <ssr-image :src="'../assets/images/CatPhoto.jpg'"/>
+    <ssr-image :src="'CatPhoto.jpg'"/>
   </div>
 </template>
 
