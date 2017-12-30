@@ -3,6 +3,7 @@
     <nav>
       <router-link to="/" exact>Cornelius Käss</router-link>
       <router-link to="/photo">Photo</router-link>
+      <router-link to="/ssr">SSR</router-link>
       <router-link to="/overview">+</router-link>
     </nav>
   </header>
@@ -53,7 +54,7 @@ export default {
       color red
     &.router-link-active
       color red
-    &:nth-child(3)
+    &:nth-child(4)
       margin-right 0
 @media (max-width 720px)
   .app-header nav
