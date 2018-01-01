@@ -79,7 +79,9 @@ module.exports = {
         new ExtractTextPlugin({
           filename: 'common.[chunkhash].css'
         }),
-        new BundleAnalyzerPlugin()
+        // Run `npm run build --report` to activate bundle anaylzer
+        // Note: Don't activate analyzer pre firebase deployment (ie. npm run deploy)
+        ...(process.env.npm_config_report ? [new BundleAnalyzerPlugin()] : [])
       ]
     : [
         new FriendlyErrorsPlugin()       
