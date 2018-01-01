@@ -3,9 +3,10 @@
     <app-header/>
     <transition appear v-bind:css="false" name="fade" mode="out-in"
       v-on:before-enter="beforeEnter"
-      v-on:enter="enter"    
+      v-on:enter="enter"
+      v-on:after-enter="afterEnter"
     >
-      <router-view class="view"></router-view>
+      <router-view ref="content" class="content"></router-view>
     </transition>
   </div>
 </template>
@@ -19,41 +20,77 @@ export default {
     'app-header':Header
   },
 
-  props: {
+  data: function () {
+    return {
+      resizeTimeout: ''
+    }
   },
 
   computed: {
+    viewport () { return this.$store.getters['layout/viewport'] }
   },
   
-  beforeMount () {
-    this.$bar.finish()
+  beforeMount () { // Initial app start, fires only once
+  },
+
+  mounted () {
+    this.listenViewport()
+    this.listenScroll()
   },
 
   beforeDestroy () {
-    this.$bar.start()
   },
 
   watch: {
+    '$route' (to, from) {
+    }
   },
 
   methods: {
-    beforeEnter: function (el) {
-      console.log('Before enter')
-      el.style.opacity = 0
+
+    listenViewport: function () {
+      // Initial viewport assignment and then listen on resize. The params passed here are to set the grid dimensions
+      this.$store.dispatch('layout/setViewport')
+      window.onresize = () => {
+        clearTimeout(this.resizeTimeout)
+        this.resizeTimeout = setTimeout(() => {
+          this.$store.dispatch('layout/setViewport')
+        }, 500) // Throttle resize for half a second
+      }
     },
 
-    // the done callback is optional when
-    // used in combination with CSS
+    listenScroll: function () {
+      window.addEventListener('scroll', this.scrollFunction)
+    },
+
+    scrollFunction: function (e) {
+      // console.log(e)
+      // console.log(`${window.scrollY} / ${this.viewport.height}`)
+      // let scrollTop = this.$vuebar.getState(this.$refs[`scroll`]).dragger.offsetTop
+      // scrollTop >= 50 ? this.$store.dispatch('setNavBackground', true) : this.$store.dispatch('setNavBackground', false)
+    },
+
+    beforeEnter: function (el) {
+      console.log('Before enter')
+      this.$bar.start()
+      el.style.opacity = 0
+    },
     enter: function (el, done) {
-      console.log('enter here')
+      console.log('Enter')
       el.style.opacity = 1
+      done()
       /*
       setTimeout(() => { 
         console.log('Enter done')
         el.style.opacity = 1
-        // done()
+        done()
       }, 3000);
       */
+    },
+    afterEnter: function (el) {
+      console.log('After enter')
+      console.log(this.$refs['content'].$el.clientHeight)
+      this.$bar.finish()
     },
   }
 }
@@ -70,7 +107,7 @@ a
   text-decoration none
 p
   margin 0px
-.view
+.content
   max-width 720px
   margin 0 auto
 .fade-enter-active, .fade-leave-active

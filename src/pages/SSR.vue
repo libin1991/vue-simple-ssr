@@ -1,6 +1,7 @@
 <template>
   <div class="ssr">
     <ssr-image :src="'CatPhoto.jpg'" :ratio="8/10"/>
+    <ssr-image :src="'PixelPhoto.jpg'" :ratio="3/4"/>
     <h1>Sevgiyle calisiyoruz</h1>
   </div>
 </template>
@@ -9,27 +10,8 @@
 import SSRImage from '../components/SSRImage.vue'
 export default {
   name: 'ssr',
-
   components: {
     'ssr-image': SSRImage
-  },
-
-  props: {
-  },
-
-  computed: {
-  },
-
-  beforeMount () {
-  },
-
-  beforeDestroy () {
-  },
-
-  watch: {
-  },
-
-  methods: {
   }
 }
 </script>

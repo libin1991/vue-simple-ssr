@@ -38,10 +38,11 @@ export default {
     this.height = this.$el.clientWidth / this.ratio
     if (!this.isLoaded) {
       import(`../../static/images/${this.src}`).then((x) => {
+        console.log(this.src + ' is loaded HIFI')
         this.replaceHifi()
         setTimeout(() => {
           this.$store.dispatch('progress/addImageProgress', this.src)
-        }, 300)
+        }, 400) // Delay needs to be slightly longer then css transition (.3s)
       });
     } else {
       this.replaceHifi()
