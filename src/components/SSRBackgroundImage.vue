@@ -1,26 +1,24 @@
 <template>
   <div class="ssr-image-container">
-    <img class="ssr-image"
-      :src="srcData"
+    <div class="ssr-image-placeholder"
       :style="[
-        {'height': height + 'px'},
-        {'filter': 'blur(' + blur + 'px)'},
-        {'transform': 'scale(' + scale + ')'}
+        {'background-image': 'url(dist/static/images/Lofi_'+ src + ')'},
+        {'height': height + 'px'}
       ]"
-    />
+    >
+    </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
 export default {
   name: 'ssrImage',
 
   data: function () {
     return {
-      srcData: 'dist/static/images/Lofi_'+ this.src + '',
-      height: 0,
-      blur: 10,
-      scale: 1.1
+      loaded: false,
+      height: 0
     }
   },
 
@@ -47,9 +45,9 @@ export default {
   mounted () {
     this.height = this.$el.clientWidth / this.ratio
     import(`../../static/images/${this.src}`).then((x) => {
-      this.srcData = x
-      this.scale = 1
-      this.blur = 0
+      const Component = Vue.extend({template: `<img class="ssr-image" src="${x}" />`})
+      const Instance = new Component()
+      Instance.$mount(this.$el)
     });
   },
 
@@ -62,8 +60,14 @@ export default {
 .ssr-image-container
   width 100%
   overflow hidden
+.ssr-image-placeholder
+  width 100%
+  filter blur(10px)
+  background-position center
+  background-repeat no-repeat
+  background-size cover
+  transform scale(1.1)
+  z-index 0
 .ssr-image
   width 100%
-  transition filter .3s
-  transition transform .3s
 </style>

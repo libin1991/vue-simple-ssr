@@ -8,11 +8,13 @@ const config = merge(base, {
   entry: {
     app: './src/entry-client.js'
   },
+  /* Don't need this unless you are going to import Vue inside a component
   resolve: {
     alias: {
       vue: 'vue/dist/vue.js'
     }
-  },  
+  },
+  */  
   plugins: [
     // strip dev-only code in Vue source
     new webpack.DefinePlugin({

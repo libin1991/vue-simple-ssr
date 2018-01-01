@@ -8,11 +8,13 @@ module.exports = merge(base, {
   target: 'node',
   devtool: '#source-map',
   entry: './src/entry-server.js',
+  /* Don't need this unless you are going to import Vue inside a component
   resolve: {
     alias: {
       vue: 'vue/dist/vue.js'
     }
-  },  
+  },
+  */  
   output: {
     filename: 'server-bundle.js',
     libraryTarget: 'commonjs2'

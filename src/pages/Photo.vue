@@ -1,6 +1,5 @@
 <template>
   <div class="photo">
-    <lazy-container :src="'https://unsplash.it/1920/1080?image=12'"/>
   </div>
 </template>
 
@@ -20,11 +19,9 @@ export default {
   },
 
   beforeMount () {
-    this.$bar.finish()
   },
 
   beforeDestroy () {
-    this.$bar.start()
   },
 
   watch: {

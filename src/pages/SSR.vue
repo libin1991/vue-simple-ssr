@@ -1,6 +1,7 @@
 <template>
   <div class="ssr">
-    <ssr-image :src="'CatPhoto.jpg'"/>
+    <ssr-image :src="'CatPhoto.jpg'" :ratio="8/10"/>
+    <h1>Sevgiyle calisiyoruz</h1>
   </div>
 </template>
 
@@ -20,11 +21,9 @@ export default {
   },
 
   beforeMount () {
-    this.$bar.finish()
   },
 
   beforeDestroy () {
-    this.$bar.start()
   },
 
   watch: {

@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <app-header/>
-    <transition name="fade" mode="out-in">
+    <transition appear v-bind:css="false" name="fade" mode="out-in"
+      v-on:before-enter="beforeEnter"
+      v-on:enter="enter"    
+    >
       <router-view class="view"></router-view>
     </transition>
   </div>
@@ -21,7 +24,7 @@ export default {
 
   computed: {
   },
-
+  
   beforeMount () {
     this.$bar.finish()
   },
@@ -34,6 +37,24 @@ export default {
   },
 
   methods: {
+    beforeEnter: function (el) {
+      console.log('Before enter')
+      el.style.opacity = 0
+    },
+
+    // the done callback is optional when
+    // used in combination with CSS
+    enter: function (el, done) {
+      console.log('enter here')
+      el.style.opacity = 1
+      /*
+      setTimeout(() => { 
+        console.log('Enter done')
+        el.style.opacity = 1
+        // done()
+      }, 3000);
+      */
+    },
   }
 }
 </script>
