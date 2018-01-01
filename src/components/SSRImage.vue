@@ -1,7 +1,8 @@
 <template>
   <div class="ssr-image-container">
-    <img class="ssr-image"
+    <img
       :src="srcData"
+      :class=" {'is-transition': !isLoaded}"
       :style="[
         {'height': height + 'px'},
         {'filter': 'blur(' + blur + 'px)'},
@@ -24,46 +25,43 @@ export default {
     }
   },
 
-  /*
   computed: {
-    height () {
-      console.log(this.$el)
-      console.log(this.$el.clientWidth)
-      return 100
-    }
-  },
-  */
-
-  components: {
+    progressedImages () { return this.$store.getters['progress/images'] },
+    isLoaded () { if ( this.progressedImages.indexOf(this.src) > -1 ) {return true} else {return false} }
   },
 
   props: [
     'src', 'ratio'
   ],
 
-  beforeMount () {
-  },
-
   mounted () {
     this.height = this.$el.clientWidth / this.ratio
-    import(`../../static/images/${this.src}`).then((x) => {
-      this.srcData = x
-      this.scale = 1
-      this.blur = 0
-    });
+    if (!this.isLoaded) {
+      import(`../../static/images/${this.src}`).then((x) => {
+        this.replaceHifi()
+        setTimeout(() => {
+          this.$store.dispatch('progress/addImageProgress', this.src)
+        }, 300)
+      });
+    } else {
+      this.replaceHifi()
+    }
   },
 
   methods: {
+    replaceHifi(){
+      this.srcData = 'dist/static/images/'+ this.src
+      this.scale = 1
+      this.blur = 0
+    }
   }
 }
 </script>
 
 <style lang="stylus">
 .ssr-image-container
-  width 100%
   overflow hidden
-.ssr-image
-  width 100%
+.is-transition
   transition filter .3s
   transition transform .3s
 </style>

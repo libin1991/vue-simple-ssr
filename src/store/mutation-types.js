@@ -1,0 +1,1 @@
+export const PROGRESS_ADD_IMAGE = 'PROGRESS_ADD_IMAGE'
