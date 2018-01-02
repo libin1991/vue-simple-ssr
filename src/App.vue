@@ -103,7 +103,7 @@ body
   overflow-y scroll
 a
   text-decoration none
-p
+h1, h4, p
   margin 0px
 .content
   max-width 960px

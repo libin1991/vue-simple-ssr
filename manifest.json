@@ -1,6 +1,6 @@
 {
   "name": "Vue Blank SSR Starter",
-  "short_name": "Vue Blank SSR",
+  "short_name": "VueSimpleSSR",
   "icons": [{
       "src": "/public/logo-120.png",
       "sizes": "120x120",
@@ -32,6 +32,5 @@
     }],
   "start_url": "/",
   "background_color": "#f2f3f5",
-  "display": "standalone",
   "theme_color": "#f60"
 }

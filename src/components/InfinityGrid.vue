@@ -5,22 +5,18 @@
       v-for="item in 50" 
       v-bind:key="item"
     >
-      <ssr-background class="item"
-        :src="'dist/static/images/workshop/' + item + '.jpg'"
-        :placeholder="'dist/static/images/workshop/thumbnails/' + item + '.jpg'"
-      />
     </div>
   </div>
 </template>
 
 <script>
-import SSRImage from '../modules/ssr-progressive-img/components/SSRImage.vue'
-import SSRBackground from '../modules/ssr-progressive-img/components/SSRBackground.vue'
+// import SSRImage from '../modules/ssr-progressive-img/components/SSRImage.vue'
+// import SSRBackground from '../modules/ssr-progressive-img/components/SSRBackground.vue'
 export default {
   name: 'infinityGrid',
   components: {
-    'ssr-image': SSRImage,
-    'ssr-background': SSRBackground
+    // 'ssr-image': SSRImage,
+    // 'ssr-background': SSRBackground
   },
 
   /*
@@ -52,7 +48,6 @@ export default {
 .infinity-grid
   display: flex;
   flex-flow: row wrap;
-  margin: -10px
 .item
   flex: auto;
   max-height: 320px;
@@ -64,3 +59,9 @@ export default {
   z-index 99
   background #fff
 </style>
+
+      <ssr-background class="item"
+        :src="'dist/static/images/workshop/' + item + '.jpg'"
+        :placeholder="'dist/static/images/workshop/thumbnails/' + item + '.jpg'"
+        no-ratio
+      />

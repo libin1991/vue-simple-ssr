@@ -1,32 +1,16 @@
 <template>
   <header class="app-header">
     <nav>
-      <router-link to="/" exact>Cornelius Käss</router-link>
-      <router-link to="/photo">Photo</router-link>
-      <router-link to="/ssr">SSR</router-link>
-      <router-link to="/overview">+</router-link>
+      <router-link to="/"><h4>Home</h4></router-link>
+      <router-link to="/ssr"><h4>SSR</h4></router-link>
+      <router-link to="/overview"><h4>+</h4></router-link>
     </nav>
   </header>
 </template>
 
 <script>
 export default {
-  name: 'app-header',
-
-  components: {
-  },
-
-  props: {
-  },
-
-  computed: {
-  },
-
-  mounted () {
-  },
-
-  methods: {
-  }
+  name: 'app-header'
 }
 </script>
 
@@ -40,22 +24,33 @@ export default {
   right 0
   nav
     max-width 960px
-    box-sizing border-box
     margin 0px auto
     padding 16px 0px
   a
     line-height 24px
-    transition color .15s ease
     display inline-block
     vertical-align middle
-    font-weight 300
+    font-weight 500
     margin-right 1em
+    color black
+    &:last-child
+      margin-right 0
+  /*
+  a
+    line-height 24px
+    display inline-block
+    vertical-align middle
+    font-weight 500
+    margin-right 1em
+    color black
+    background white !important
     &:hover
       color red
     &.router-link-active
       color red
-    &:nth-child(4)
+    &:last-child(4)
       margin-right 0
+  */
 @media (max-width 960px)
   .app-header nav
     padding 16px 0px

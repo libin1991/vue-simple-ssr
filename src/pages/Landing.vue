@@ -1,5 +1,7 @@
 <template>
   <div class="landing">
+    <h1>Vue Simple SSR</h1>
+    <p>Welcome</p>
   </div>
 </template>
 
