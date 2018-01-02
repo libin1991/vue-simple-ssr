@@ -5,7 +5,7 @@
       v-for="item in 50" 
       v-bind:key="item"
     >
-      <ssr-image class="item"
+      <ssr-background class="item"
         :src="'dist/static/images/workshop/' + item + '.jpg'"
         :placeholder="'dist/static/images/workshop/thumbnails/' + item + '.jpg'"
       />
@@ -15,10 +15,12 @@
 
 <script>
 import SSRImage from '../modules/ssr-progressive-img/components/SSRImage.vue'
+import SSRBackground from '../modules/ssr-progressive-img/components/SSRBackground.vue'
 export default {
   name: 'infinityGrid',
   components: {
-    'ssr-image': SSRImage
+    'ssr-image': SSRImage,
+    'ssr-background': SSRBackground
   },
 
   /*
@@ -48,15 +50,17 @@ export default {
 
 <style lang="stylus">
 .infinity-grid
-  display grid
-  grid-template-columns repeat(auto-fill, minmax(120px, 1fr))
-  grid-gap 10px
-  grid-auto-rows minmax(120px, auto)
-  grid-auto-flow dense
-  padding 10px
+  display: flex;
+  flex-flow: row wrap;
+  margin: -10px
 .item
-  width 100%
+  flex: auto;
+  max-height: 320px;
+  min-width: 180px;
+  margin: 5px
 .scroll
   position fixed
-  bottom 0px  
+  bottom 0px
+  z-index 99
+  background #fff
 </style>

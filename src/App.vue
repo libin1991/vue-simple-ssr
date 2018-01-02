@@ -106,8 +106,9 @@ a
 p
   margin 0px
 .content
-  max-width 720px
+  max-width 960px
   margin 0 auto
+  padding-top 55px
 .fade-enter-active, .fade-leave-active
   transition all .2s ease
 .fade-enter, .fade-leave-active

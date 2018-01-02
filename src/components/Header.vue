@@ -39,7 +39,7 @@ export default {
   left 0
   right 0
   nav
-    max-width 720px
+    max-width 960px
     box-sizing border-box
     margin 0px auto
     padding 16px 0px
@@ -56,7 +56,7 @@ export default {
       color red
     &:nth-child(4)
       margin-right 0
-@media (max-width 720px)
+@media (max-width 960px)
   .app-header nav
     padding 16px 0px
 </style>
