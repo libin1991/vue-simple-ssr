@@ -51,9 +51,11 @@ export default {
 
   methods: {
     replaceHifi(){
+      /*
       this.srcData = 'dist/static/images/'+ this.src
       this.scale = 1
       this.blur = 0
+      */
     }
   }
 }
@@ -61,6 +63,7 @@ export default {
 
 <style lang="stylus">
 .ssr-image-container
+  position relative
   overflow hidden
 .is-transition
   transition filter .3s
