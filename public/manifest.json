@@ -31,6 +31,6 @@
     "type": "image/png"
     }],
   "start_url": "/",
-  "background_color": "#f2f3f5",
-  "theme_color": "#f60"
+  "background_color": "#fff",
+  "theme_color": "#bcffef"
 }
