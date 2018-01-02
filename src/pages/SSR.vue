@@ -1,15 +1,23 @@
 <template>
   <div class="ssr">
     <div class="is-flexHorizontal">
-      <ssr-image class="flex1" :src="'CatPhoto.jpg'" :ratio="8/10"/>
-      <ssr-image class="flex1" :src="'PixelPhoto.jpg'" :ratio="3/4"/>
+      <ssr-image class="flex1"
+        src="dist/static/images/CatPhoto.jpg"
+        placeholder="dist/static/images/Lofi_CatPhoto.jpg"
+        :aspect-ratio="1"
+      />
+      <ssr-image class="flex1"
+        src="dist/static/images/PixelPhoto.jpg"
+        placeholder="dist/static/images/Lofi_PixelPhoto.jpg"
+        :aspect-ratio="1"
+      />
     </div>
     <h1>Sevgiyle calisiyoruz</h1>
   </div>
 </template>
 
 <script>
-import SSRImage from '../components/SSRImage.vue'
+import SSRImage from '../modules/ssr-progressive-img/components/SSRImage.vue'
 export default {
   name: 'ssr',
   components: {
@@ -19,9 +27,4 @@ export default {
 </script>
 
 <style lang="stylus">
-.is-flexHorizontal
-  display flex
-  flex-direction horizontal
-.flex1
-  flex 1
 </style>

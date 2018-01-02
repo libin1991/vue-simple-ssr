@@ -4,32 +4,8 @@
 </template>
 
 <script>
-import LazyContainer from '../components/LazyContainer.vue'
 export default {
-  name: 'landing',
-  components: {
-    LazyContainer
-  },
-
-  props: {
-  },
-
-  computed: {
-  },
-
-  beforeMount () {
-    this.$bar.finish()
-  },
-
-  beforeDestroy () {
-    this.$bar.start()
-  },
-
-  watch: {
-  },
-
-  methods: {
-  }
+  name: 'landing'
 }
 </script>
 

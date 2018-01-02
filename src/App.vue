@@ -114,4 +114,10 @@ p
   transition all .2s ease
 .fade-enter, .fade-leave-active
   opacity 0
+
+.is-flexHorizontal
+  display flex
+  flex-direction horizontal
+.flex1
+  flex 1  
 </style>
