@@ -17,7 +17,7 @@ export default {
   name: 'app',
 
   components: {
-    'app-header':Header
+    'app-header': Header
   },
 
   data: function () {
@@ -29,9 +29,9 @@ export default {
   computed: {
     viewport () { return this.$store.getters['layout/viewport'] }
   },
-  
+
   beforeMount () { // Initial app start, fires only once
-    this.$store.dispatch('layout/setViewport', 
+    this.$store.dispatch('layout/setViewport',
       { width: document.children[0].clientWidth, height: document.children[0].clientHeight }
     )
   },
@@ -53,9 +53,9 @@ export default {
 
     listenViewport: function () {
       window.onresize = () => {
-      clearTimeout(this.resizeTimeout)
+        clearTimeout(this.resizeTimeout)
         this.resizeTimeout = setTimeout(() => {
-          this.$store.dispatch('layout/setViewport', 
+          this.$store.dispatch('layout/setViewport',
             { width: document.children[0].clientWidth, height: document.children[0].clientHeight }
           )
         }, 500) // Throttle resize for half a second
@@ -78,7 +78,7 @@ export default {
       el.style.opacity = 1
       done()
       /*
-      setTimeout(() => { 
+      setTimeout(() => {
         console.log('Enter done')
         el.style.opacity = 1
         done()
@@ -88,7 +88,7 @@ export default {
     afterEnter: function (el) {
       this.$store.dispatch('layout/setContent', { width: this.$refs['content'].$el.clientWidth, height: this.$refs['content'].$el.clientHeight })
       this.$bar.finish()
-    },
+    }
   }
 }
 </script>

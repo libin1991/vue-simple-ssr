@@ -40,7 +40,7 @@
     computed: {
       placeholderStyle () {
         return {
-          'filter':'blur(20px)',
+          'filter': 'blur(20px)',
           'background-image': `url(${this.placeholder})`
         }
       }

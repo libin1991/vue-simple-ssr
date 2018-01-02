@@ -43,7 +43,7 @@ const actions = {
   },
   setScrollPosition ({ commit }, scrollPosition) {
     commit(types.LAYOUT_SET_SCROLL_POSITION, scrollPosition)
-  }     
+  }
 }
 
 export default {

@@ -19,7 +19,7 @@ export default {
       duration: 3000,
       height: '2px',
       color: '#bcffef',
-      failedColor: '#ff0000',
+      failedColor: '#ff0000'
     }
   },
   methods: {
