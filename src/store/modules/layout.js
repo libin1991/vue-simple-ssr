@@ -3,35 +3,47 @@ import * as types from '../mutation-types'
 // Initial State
 const state = {
   viewport: { width: 0, height: 0 },
-  scrollPercentage: 0,
-  contentHeight: 0
+  content: { width: 0, height: 0 },
+  scroll: { size: 0, position: 0 }
 }
 
 // Getters
 const getters = {
   viewport: state => state.viewport,
-  scrollPercentage: state => state.scrollPercentage,
-  contentHeight: state => state.contentHeight
+  content: state => state.content,
+  scroll: state => state.scroll
 }
 
 // Mutations
 const mutations = {
-  [types.LAYOUT_SET_VIEWPORT] (state) {
-    state.viewport = {width: window.innerWidth, height: window.innerHeight}
+  [types.LAYOUT_SET_VIEWPORT] (state, viewport) {
+    state.viewport = viewport
   },
-  [types.LAYOUT_SET_CONTENT_HEIGHT] (state, contentHeight) {
-    state.contentHeight = contentHeight
-  }  
+  [types.LAYOUT_SET_CONTENT] (state, content) {
+    state.content = content
+    if (state.viewport.height < content.height) {
+      state.scroll.size = state.viewport.height / content.height * 100
+    } else {
+      state.scroll.size = 0
+    }
+  },
+  [types.LAYOUT_SET_SCROLL_POSITION] (state, scrollPosition) {
+    let scrollSpace = state.content.height - state.viewport.height
+    state.scroll.position = scrollPosition / scrollSpace * 100
+  }
 }
 
 // Actions
 const actions = {
-  setViewport ({ commit }) {
-    commit(types.LAYOUT_SET_VIEWPORT)
+  setViewport ({ commit }, viewport) {
+    commit(types.LAYOUT_SET_VIEWPORT, viewport)
   },
-  setContentHeight ({ commit }, contentHeight) {
-    commit(types.LAYOUT_SET_CONTENT_HEIGHT, contentHeight)
-  }  
+  setContent ({ commit }, content) {
+    commit(types.LAYOUT_SET_CONTENT, content)
+  },
+  setScrollPosition ({ commit }, scrollPosition) {
+    commit(types.LAYOUT_SET_SCROLL_POSITION, scrollPosition)
+  }     
 }
 
 export default {

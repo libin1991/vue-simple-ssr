@@ -1,5 +1,6 @@
 <template>
   <div class="infinity-grid">
+    <p class="scroll">{{scroll}}</p>
     <div class="item"
       v-for="item in gridItems" 
       v-bind:key="item"
@@ -19,14 +20,16 @@ export default {
     }
   },  
 
+  computed: {
+    viewport () { return this.$store.getters['layout/viewport'] },
+    scroll () { return this.$store.getters['layout/scroll'].position }
+  },
+
   components: {
   },
 
   props: [
   ],
-
-  computed: {
-  },
 
   mounted () {
   },
@@ -54,5 +57,8 @@ export default {
 .item
   width 100%
   height 100px
-  background blue
+  background #ededed
+.scroll
+  position fixed
+  bottom 0px  
 </style>

@@ -31,6 +31,9 @@ export default {
   },
   
   beforeMount () { // Initial app start, fires only once
+    this.$store.dispatch('layout/setViewport', 
+      { width: document.children[0].clientWidth, height: document.children[0].clientHeight }
+    )
   },
 
   mounted () {
@@ -49,34 +52,29 @@ export default {
   methods: {
 
     listenViewport: function () {
-      // Initial viewport assignment and then listen on resize. The params passed here are to set the grid dimensions
-      this.$store.dispatch('layout/setViewport')
       window.onresize = () => {
-        clearTimeout(this.resizeTimeout)
+      clearTimeout(this.resizeTimeout)
         this.resizeTimeout = setTimeout(() => {
-          this.$store.dispatch('layout/setViewport')
+          this.$store.dispatch('layout/setViewport', 
+            { width: document.children[0].clientWidth, height: document.children[0].clientHeight }
+          )
         }, 500) // Throttle resize for half a second
       }
     },
 
     listenScroll: function () {
-      window.addEventListener('scroll', this.scrollFunction)
-    },
-
-    scrollFunction: function (e) {
-      // console.log(e)
-      // console.log(`${window.scrollY} / ${this.viewport.height}`)
-      // let scrollTop = this.$vuebar.getState(this.$refs[`scroll`]).dragger.offsetTop
-      // scrollTop >= 50 ? this.$store.dispatch('setNavBackground', true) : this.$store.dispatch('setNavBackground', false)
+      window.addEventListener('scroll', (event) => {
+        this.$store.dispatch('layout/setScrollPosition', window.scrollY)
+      })
     },
 
     beforeEnter: function (el) {
-      console.log('Before enter')
+      // console.log('Before enter')
       this.$bar.start()
       el.style.opacity = 0
     },
     enter: function (el, done) {
-      console.log('Enter')
+      // console.log('Enter')
       el.style.opacity = 1
       done()
       /*
@@ -88,8 +86,7 @@ export default {
       */
     },
     afterEnter: function (el) {
-      console.log('After enter')
-      console.log(this.$refs['content'].$el.clientHeight)
+      this.$store.dispatch('layout/setContent', { width: this.$refs['content'].$el.clientWidth, height: this.$refs['content'].$el.clientHeight })
       this.$bar.finish()
     },
   }
@@ -97,11 +94,12 @@ export default {
 </script>
 
 <style lang="stylus">
+html
+  height 100%
 body
   font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size 15px
   margin 0
-  padding-top 55px
   overflow-y scroll
 a
   text-decoration none
