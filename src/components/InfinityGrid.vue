@@ -49,11 +49,13 @@ export default {
 <style lang="stylus">
 .infinity-grid
   display grid
-  grid-gap 1px
-  grid-template-columns repeat(auto-fill, minmax(240px,1fr))
+  grid-template-columns repeat(auto-fill, minmax(120px, 1fr))
+  grid-gap 10px
+  grid-auto-rows minmax(120px, auto)
+  grid-auto-flow dense
+  padding 10px
 .item
   width 100%
-  background #ededed
 .scroll
   position fixed
   bottom 0px  

@@ -8,3 +8,5 @@ yarn-error.log
 
 firebase-debug.log
 functions/ssr/
+
+static/
