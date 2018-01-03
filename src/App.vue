@@ -98,7 +98,8 @@ html
   height 100%
 body
   font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size 15px
+  font-size 16px
+  font-display optional
   margin 0
   overflow-y scroll
 a
