@@ -1,7 +1,8 @@
+const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const base = require('./webpack.base.config')
-// const SWPrecachePlugin = require('sw-precache-webpack-plugin')
+const WorkboxPlugin = require('workbox-webpack-plugin')
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 
 const config = merge(base, {
@@ -39,41 +40,30 @@ const config = merge(base, {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest'
     }),
-    new VueSSRClientPlugin()
+    new VueSSRClientPlugin()   
   ]
 })
 
-/*
 if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
-    // auto generate service worker
-    new SWPrecachePlugin({
-      cacheId: 'vue-b-ssr',
-      filename: 'service-worker.js',
-      minify: true,
-      dontCacheBustUrlsMatching: /./,
-      staticFileGlobsIgnorePatterns: [/\.map$/, /\.json$/],
+    new WorkboxPlugin({
+      globPatterns: ['**/*.{html,css,js,jpg}'],
+      globDirectory: path.resolve(__dirname, '../dist'),
+      swDest: path.join(path.resolve(__dirname, '../public'), 'sw.js'),
+      clientsClaim: true,
+      skipWaiting: true,
       runtimeCaching: [
         {
-          urlPattern: '/',
-          handler: 'networkFirst'
+          urlPattern: new RegExp('/'),
+          handler: 'staleWhileRevalidate'
         },
         {
-          urlPattern: /\/(top|new|show|ask|jobs)/,
-          handler: 'networkFirst'
-        },
-        {
-          urlPattern: '/item/:id',
-          handler: 'networkFirst'
-        },
-        {
-          urlPattern: '/user/:id',
-          handler: 'networkFirst'
-        }
+          urlPattern: new RegExp('/overview'),
+          handler: 'staleWhileRevalidate'
+        }             
       ]
     })
   )
 }
-*/
 
 module.exports = config

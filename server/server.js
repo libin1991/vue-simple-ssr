@@ -15,9 +15,8 @@ const serve = (path, cache) => express.static(resolve(path), {
 })
 
 app.use(compression({ threshold: 0 }))
+app.use('/', serve('../public', true)) // (['/icons', '/manifest.json', 'sw.js', 'workbox-sw.prod.v2.1.2.js'])
 app.use('/dist', serve('../dist', true))
-app.use('/icons', serve('../public/icons', true))
-app.use('/manifest.json', serve('../public/manifest.json', true))
 app.use(microcache.cacheSeconds(1, req => useMicroCache && req.originalUrl))
 
 if (isProd) {

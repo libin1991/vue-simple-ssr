@@ -12,6 +12,20 @@
     <link rel="apple-touch-icon" sizes="120x120" href="/icons/logo-120.png">
     <link rel="shortcut icon" sizes="48x48" href="/icons/logo-48.png">
     <link rel="manifest" href="manifest.json">
+    <!-- Service worker (sw.js) registration takes place in entry-client.js -->
+    <script>
+      console.log('Registering twice here and 1 in entry-client.js')
+      navigator.serviceWorker.register('/sw.js')
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(registration => {
+            console.log('SW registered: ', registration);
+          }).catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+        });
+      }
+    </script>
   </head>
   <body>
     <!--vue-ssr-outlet-->
