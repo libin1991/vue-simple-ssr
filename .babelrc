@@ -3,18 +3,15 @@
     ["env", { "modules": false }]
   ],
   "plugins": [
-    "syntax-dynamic-import",
+    "syntax-dynamic-import"
   ],
   "env": {
     "test": {
       "presets": ["env", "stage-2"],
       "plugins": [
-        ["module-resolver", 
-          {
-          "root": ["./src"],
-          "alias": { "@": "./src" }
-          }
-        ]
+        "transform-es2015-modules-commonjs",
+        "transform-runtime",
+        "dynamic-import-node"
       ]
     }
   }  

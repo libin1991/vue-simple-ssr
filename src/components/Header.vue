@@ -1,7 +1,7 @@
 <template>
   <header class="app-header">
     <nav>
-      <h4 class="header-home-link">Home</h4>
+      <router-link to="'/'"><h4 class="header-home-link">Home</h4></router-link>
     </nav>
   </header>
 </template>
@@ -33,23 +33,9 @@ export default {
     color black
     &:last-child
       margin-right 0
-  /*
-  a
-    line-height 24px
-    display inline-block
-    vertical-align middle
-    font-weight 500
-    margin-right 1em
-    color black
-    background white !important
-    &:hover
-      color red
-    &.router-link-active
-      color red
-    &:last-child(4)
-      margin-right 0
-  */
 @media (max-width 960px)
   .app-header nav
     padding 16px 0px
 </style>
+
+<router-link to="'/'"><h4 class="header-home-link">Home</h4></router-link>
