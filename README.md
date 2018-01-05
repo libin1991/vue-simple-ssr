@@ -1,4 +1,4 @@
-<img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100" alt="Vue Simple SSR Starter"/>
+<img align="left" width="120" height="120" src="https://github.com/kemalcany/vue-ssr-starter/blob/master/public/github/Github.png?raw=true" alt="Vue Simple SSR Starter"/>
 
 # Vue Simple SSR Starter (with Firebase)
 
