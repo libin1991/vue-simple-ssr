@@ -14,4 +14,5 @@ before_script:
 - sh -e /etc/init.d/xvfb start
 script:
 - npm run build
-- npm run unit
+- npm run test
+- npm run utils:coverage

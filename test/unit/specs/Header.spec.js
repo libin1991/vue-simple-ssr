@@ -1,10 +1,11 @@
-import Vue from 'vue'
+import { shallow } from 'vue-test-utils'
 import Header from '@/components/Header'
 
 describe('Header.vue', () => {
   it('should render correct contents', () => {
-    const Constructor = Vue.extend(Header)
-    const vm = new Constructor().$mount()
-    expect(vm.$el.querySelector('.header-home-link').textContent).toEqual('Home')
+    const wrapper = shallow(Header, {
+      stubs: ['router-link', 'router-view']
+    })
+    expect(wrapper.text()).toBe('')
   })
 })

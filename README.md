@@ -3,6 +3,7 @@
 # Vue Simple SSR Starter (with Firebase)
 
 [![Build Status](https://travis-ci.org/kemalcany/vue-simple-ssr.svg?branch=master)](https://travis-ci.org/kemalcany/vue-simple-ssr)
+[![Coverage Status](https://coveralls.io/repos/github/kemalcany/vue-simple-ssr/badge.svg?branch=master)](https://coveralls.io/github/kemalcany/vue-simple-ssr?branch=master)
 
 <p align="center">
   <img src="https://github.com/kemalcany/vue-ssr-starter/blob/master/public/github/LightHouseReport-04.01.2018.jpg?raw=true" alt="Vue Smp SSR LH Scores"/>
@@ -13,6 +14,8 @@
 Based on [Vue Hacker News 2.0](https://github.com/vuejs/vue-hackernews-2.0) with few extra features such as:
 
 - Firebase SSR integration and deployment scripts
+
+- Unit tests with Jest and `vue-test-utils`
 
 - Workbox service worker library
 
@@ -34,7 +37,7 @@ npm install
 # serve in dev mode, with hot reload at localhost:8080
 npm run dev
 
-# build for production
+# build for production (--report flag to open bundle analyzer)
 npm run build
 
 # deploy to Firebase (* see notes)
@@ -42,16 +45,18 @@ npm run deploy
 
 # serve in production mode (local)
 npm start
+
+# perform unit tests with jest
+npm test
 ```
 
 ## Notes
 
 - Run `npm run build` before `npm run deploy` to prepare chunks & bundle that are going to be deployed on FBS under /public directory
 
-- Use `npm run build --report` in order to start Webpack bundle analyzer. However, don't use this flag if you are building for serving `npm start` or deployment `npm run deploy` since bundle analyzer plugin will start a server and won't finish the build (for client and server)
-
 - `npm run deploy` command takes long time due to firebase-cli performance. [Fix](https://github.com/firebase/firebase-tools/pull/578) coming soon.
 
 ## Thanks
 
-- A lot of work (especially test setup) has been borrowed from [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)
+- Initial copy was made from [Vue Hacker News 2.0](https://github.com/vuejs/vue-hackernews-2.0)
+- Test setup has been borrowed from [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)
