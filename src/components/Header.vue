@@ -1,14 +1,24 @@
 <template>
   <header class="app-header">
     <nav>
-      <router-link to="'/'"><h4 class="header-home-link">Home</h4></router-link>
+      <router-link to="/" class="header-logo">
+        <ssr-image
+          :src="'icons/logo-256.png'"
+          :placeholder="'icons/logo-48.png'"
+        />      
+      </router-link>
     </nav>
+    <h1>Vue Simple SSR Starter</h1>
   </header>
 </template>
 
 <script>
+import SSRImage from '../modules/ssr-progressive-img/components/SSRImage.vue'
 export default {
-  name: 'app-header'
+  name: 'app-header',
+  components: {
+    'ssr-image': SSRImage
+  }
 }
 </script>
 
@@ -23,16 +33,13 @@ export default {
   nav
     max-width 960px
     margin 0px auto
-    padding 16px 0px
-  a
-    line-height 24px
-    display inline-block
-    vertical-align middle
-    font-weight 500
-    margin-right 1em
-    color black
-    &:last-child
-      margin-right 0
+    padding 0px 0px
+  h1
+    text-align center
+.header-logo
+  width 128px
+  display block
+  margin 0px auto
 @media (max-width 960px)
   .app-header nav
     padding 16px 0px

@@ -4,8 +4,6 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const Landing = () => import(/* webpackChunkName: 'pages-landing' */ '../pages/Landing.vue')
-const SSR = () => import(/* webpackChunkName: 'pages-ssr' */ '../pages/SSR.vue')
-const Overview = () => import(/* webpackChunkName: 'pages-overview' */'../pages/Overview.vue')
 
 export function createRouter () {
   return new Router({
@@ -13,9 +11,7 @@ export function createRouter () {
     fallback: false,
     scrollBehavior: () => ({ y: 0 }),
     routes: [
-      { path: '/', component: Landing },
-      { path: '/ssr', component: SSR },
-      { path: '/overview', component: Overview }
+      { path: '/', component: Landing }
     ]
   })
 }

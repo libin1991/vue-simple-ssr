@@ -1,13 +1,15 @@
 <template>
   <div class="landing">
-    <h1>Vue Simple SSR</h1>
-    <p>Welcome</p>
   </div>
 </template>
 
 <script>
+import InfinityGrid from '../components/InfinityGrid.vue'
 export default {
-  name: 'landing'
+  name: 'landing',
+  components: {
+    InfinityGrid
+  }
 }
 </script>
 
