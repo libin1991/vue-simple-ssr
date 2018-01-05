@@ -1,6 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const vueConfig = require('./vue-loader.config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -21,7 +20,6 @@ module.exports = {
   resolve: {
     alias: {
       'public': path.resolve(__dirname, '../public')
-      // '@': path.resolve(__dirname, '../src')
     }
   },
   module: {
@@ -39,7 +37,15 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: vueConfig
+        options: {
+          extractCSS: process.env.NODE_ENV === 'production',
+          preserveWhitespace: false,
+          postcss: [
+            require('autoprefixer')({
+              browsers: ['last 3 versions']
+            })
+          ]
+        }
       },
       {
         test: /\.js$/,
@@ -91,8 +97,6 @@ module.exports = {
         new ExtractTextPlugin({
           filename: 'common.[chunkhash].css'
         }),
-        // Run `npm run build --report` to activate bundle anaylzer
-        // Note: Don't activate analyzer pre firebase deployment (ie. npm run deploy)
         ...(process.env.npm_config_report ? [new BundleAnalyzerPlugin()] : [])
       ]
     : [
