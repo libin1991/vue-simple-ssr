@@ -8,3 +8,6 @@ yarn-error.log
 
 firebase-debug.log
 functions/ssr/
+
+test/unit/coverage/
+test/e2e/reports/

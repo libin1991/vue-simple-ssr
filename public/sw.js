@@ -19,28 +19,28 @@ importScripts('workbox-sw.prod.v2.1.2.js');
  */
 const fileManifest = [
   {
-    "url": "/dist/app.65d7a6a1fc605a1cf370.js",
-    "revision": "22562720d798eda345cc41b79aaf9a38"
+    "url": "/dist/app.b70fb2da677e1d4f4422.js",
+    "revision": "10995abca88f1a5d4a7df00763960f61"
   },
   {
-    "url": "/dist/common.65d7a6a1fc605a1cf370.css",
+    "url": "/dist/common.b70fb2da677e1d4f4422.css",
     "revision": "c3dcf8aea44465e0a40dfb6d20ebae44"
   },
   {
-    "url": "/dist/manifest.1c5c5aa53e4dd85c0299.js",
-    "revision": "5d5d4d6c6ec97d733a4958a1d234b01a"
+    "url": "/dist/manifest.210d8b774cfcee83028d.js",
+    "revision": "0978bbec61a7f9f65e7d1f8c5d5f45a4"
   },
   {
-    "url": "/dist/pages-landing.a5d7a650473c8ecede4e.js",
-    "revision": "a15e854180a73388b31b4a34ade8a616"
+    "url": "/dist/pages-landing.d66889c3654fff317561.js",
+    "revision": "d91d36b866961cc1a5bae3164781879f"
   },
   {
-    "url": "/dist/pages-overview.2ae831aefc0e579d846f.js",
-    "revision": "ace5b5355bf10e3ff4548ef1259a1527"
+    "url": "/dist/pages-overview.018a6d7760e565bbf50b.js",
+    "revision": "ce7e87f1c522563eb2520a5e60c56a7b"
   },
   {
-    "url": "/dist/pages-ssr.6e198a39eca262696b9a.js",
-    "revision": "a3376f717778c4143d2d15fd3ef3acda"
+    "url": "/dist/pages-ssr.b340201a673b90444cba.js",
+    "revision": "bbb84b185efd75f8c8f425b201573f09"
   },
   {
     "url": "/dist/vendor.448ee32738c3ce0170d6.js",

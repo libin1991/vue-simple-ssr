@@ -51,3 +51,7 @@ npm start
 - Use `npm run build --report` in order to start Webpack bundle analyzer. However, don't use this flag if you are building for serving `npm start` or deployment `npm run deploy` since bundle analyzer plugin will start a server and won't finish the build (for client and server)
 
 - `npm run deploy` command takes long time due to firebase-cli performance. [Fix](https://github.com/firebase/firebase-tools/pull/578) coming soon.
+
+## Thanks
+
+- A lot of work (especially test setup) has been borrowed from [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)

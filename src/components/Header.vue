@@ -1,9 +1,7 @@
 <template>
   <header class="app-header">
     <nav>
-      <router-link to="/"><h4>Home</h4></router-link>
-      <router-link to="/ssr"><h4>SSR</h4></router-link>
-      <router-link to="/overview"><h4>+</h4></router-link>
+      <h4 class="header-home-link">Home</h4>
     </nav>
   </header>
 </template>
