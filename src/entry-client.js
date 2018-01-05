@@ -64,7 +64,10 @@ router.onReady(() => {
 
 // Service Worker (Workbox)
 // if (location.protocol === 'https:' && navigator.serviceWorker) {
-if (navigator.serviceWorker) {
+console.log('Selam')
+console.log(process.env.NODE_ENV)
+console.log(process)
+if (process.env.NODE_ENV !== 'development' && navigator.serviceWorker) {
   navigator.serviceWorker.register('/sw.js').then(registration => {
     console.log('SW registered: ', registration)
   }).catch(registrationError => {
