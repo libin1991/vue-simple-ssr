@@ -1,8 +1,8 @@
 <template>
   <div class="ssr">
     <ssr-image
-      :src="'dist/static/images/workshop/' + 1 + '.jpg'"
-      :placeholder="'dist/static/images/workshop/thumbnails/' + 1 + '.jpg'"
+      :src="'images/workshop/' + 1 + '.jpg'"
+      :placeholder="'images/workshop/thumbnails/' + 1 + '.jpg'"
     />    
   </div>
 </template>

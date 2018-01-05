@@ -6,8 +6,8 @@
       v-bind:key="item"
     >
       <ssr-background class="item"
-        :src="'dist/static/images/workshop/' + item + '.jpg'"
-        :placeholder="'dist/static/images/workshop/thumbnails/' + item + '.jpg'"
+        :src="'images/workshop/' + item + '.jpg'"
+        :placeholder="'images/workshop/thumbnails/' + item + '.jpg'"
       />
     </div>
   </div>

@@ -70,6 +70,7 @@ module.exports = {
   },
   plugins: 
     [
+    /*
     ...[ // Global plugins
       new CopyWebpackPlugin([
         {
@@ -78,7 +79,8 @@ module.exports = {
           ignore: ['.*']
         }
       ])      
-    ],  
+    ],
+    */
     ...(isProd ? // Environment dependent plugins
       [
         new webpack.optimize.UglifyJsPlugin({
