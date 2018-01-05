@@ -3,8 +3,8 @@ const path = require('path')
 const MFS = require('memory-fs')
 const webpack = require('webpack')
 const chokidar = require('chokidar')
-const clientConfig = require('./webpack.client.config')
-const serverConfig = require('./webpack.server.config')
+const clientConfig = require('../build/webpack.client.config')
+const serverConfig = require('../build/webpack.server.config')
 
 const readFile = (fs, file) => {
   try {
@@ -18,7 +18,7 @@ module.exports = function setupDevServer (app, templatePath, cb) {
   let clientManifest
 
   let ready
-  const readyPromise = new Promise(r => { ready = r })
+  const readyPromise = new Promise(resolve => { ready = resolve })
   const update = () => {
     if (bundle && clientManifest) {
       ready()

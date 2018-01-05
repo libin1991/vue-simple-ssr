@@ -27,7 +27,7 @@ if (isProd) {
   app.get('*', require('./utils').prodRender(prodBundleRenderer))
 } else {
   let renderer
-  let readyPromise = require('../build/setup-dev-server')(
+  let readyPromise = require('./setup-dev-server')(
     app,
     resolve('../src/index.template.html'),
     (bundle, options) => {
