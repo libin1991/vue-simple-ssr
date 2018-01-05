@@ -1,4 +1,4 @@
-<img align="left" width="120" height="120" src="https://github.com/kemalcany/vue-ssr-starter/blob/master/public/github/Github.png?raw=true" alt="Vue Simple SSR Starter"/>
+<img align="right" width="120" height="120" src="https://github.com/kemalcany/vue-ssr-starter/blob/master/public/github/VueSimpleSSR.png?raw=true" alt="Vue Simple SSR Starter"/>
 
 # Vue Simple SSR Starter (with Firebase)
 
@@ -25,7 +25,7 @@ Based on [Vue Hacker News 2.0](https://github.com/vuejs/vue-hackernews-2.0) with
 
 - **DEMO :** To see a working demo please visit [https://vuessrtest.com](https://vuessrtest.com)
 
-## Build Setup
+## Setup
 
 ``` bash
 Requires Node.js 7+
