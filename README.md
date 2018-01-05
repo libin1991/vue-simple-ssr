@@ -1,3 +1,5 @@
+<img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100" alt="Vue Simple SSR Starter"/>
+
 # Vue Simple SSR Starter (with Firebase)
 
 [![Build Status](https://travis-ci.org/kemalcany/vue-simple-ssr.svg?branch=master)](https://travis-ci.org/kemalcany/vue-simple-ssr)
@@ -23,8 +25,8 @@ Based on [Vue Hacker News 2.0](https://github.com/vuejs/vue-hackernews-2.0) with
 ## Build Setup
 
 ``` bash
-* Requires Node.js 7+
-_____________________
+Requires Node.js 7+
+___________________
 
 # install dependencies
 npm install
