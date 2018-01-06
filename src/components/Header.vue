@@ -8,7 +8,7 @@
         />      
       </router-link>
     </nav>
-    <h1>Vue Simple SSR Starter</h1>
+    <h1>Vue Simple SSR</h1>
   </header>
 </template>
 
