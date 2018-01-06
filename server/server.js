@@ -17,13 +17,13 @@ const serve = (path, cache) => express.static(resolve(path), {
 app.use(compression({ threshold: 0 }))
 app.use('/', serve('../public', true)) // (['/icons', '/manifest.json', 'sw.js', 'workbox-sw.prod.v2.1.2.js'])
 app.use('/dist', serve('../dist', true))
-app.use(microcache.cacheSeconds(1, req => useMicroCache && req.originalUrl))
 
 if (isProd) {
   const template = fs.readFileSync(resolve('../src/index.template.html'), 'utf-8')
   const bundle = require('../dist/vue-ssr-server-bundle.json')
   const clientManifest = require('../dist/vue-ssr-client-manifest.json')
   const prodBundleRenderer = require('./utils').createRenderer(bundle, {template, clientManifest})
+  app.use(microcache.cacheSeconds(1, req => useMicroCache && req.originalUrl)) // Microcache only avail in prod because it blocks hot reload in dev
   app.get('*', require('./utils').prodRender(prodBundleRenderer))
 } else {
   let renderer

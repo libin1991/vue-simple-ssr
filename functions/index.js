@@ -1,3 +1,6 @@
+// Firebase is expected to always run in production env.
+// Therefore conditional dev code blocks are not necessary here
+
 const functions = require('firebase-functions')
 const fs = require('fs')
 const path = require('path')
