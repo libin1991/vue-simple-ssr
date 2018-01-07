@@ -4,6 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const Landing = () => import(/* webpackChunkName: 'pages-landing' */ '../pages/Landing.vue')
+const Lazy = () => import(/* webpackChunkName: 'pages-lazy' */ '../pages/Lazy.vue')
 
 export function createRouter () {
   return new Router({
@@ -11,7 +12,8 @@ export function createRouter () {
     fallback: false,
     scrollBehavior: () => ({ y: 0 }),
     routes: [
-      { path: '/', component: Landing }
+      { path: '/', component: Landing },
+      { path: '/lazy', component: Lazy }
     ]
   })
 }
