@@ -40,7 +40,7 @@ const config = merge(base, {
 if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
     new WorkboxPlugin({
-      globPatterns: ['**/*.{html,css,js,jpg}'],
+      globPatterns: ['**/*.{html,css,js,jpg,png,svg,tff}'],
       globDirectory: path.resolve(__dirname, '../dist'),
       swDest: path.join(path.resolve(__dirname, '../public'), 'sw.js'),
       clientsClaim: true,

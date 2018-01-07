@@ -27,16 +27,16 @@ const fileManifest = [
     "revision": "10691acb5521bcef21406d43b9f242bf"
   },
   {
-    "url": "/dist/components-infinity-grid.8e8bfd68e5ac648a6d06.js",
-    "revision": "c1e372bddbe7686ac3c8c47274c0889e"
+    "url": "/dist/components-infinity-grid.1cec2152b3b1412f0501.js",
+    "revision": "e2b79d2ab6af763cf8eb826f44145835"
   },
   {
     "url": "/dist/components-info-box.ef4f1ff2c9bdf398e958.js",
     "revision": "686a8601c7a2b8a871cdec17c325f540"
   },
   {
-    "url": "/dist/manifest.56019c8da755e44274fb.js",
-    "revision": "c4f90a76f3b0f4d99b0d55b4351451e6"
+    "url": "/dist/manifest.eb94c1fb19bc1f6a02ff.js",
+    "revision": "b4b149e424a5fa4e5a01643c549d2dec"
   },
   {
     "url": "/dist/modules-ssr-progressive-background.69c37e275437ff9de77d.js",
