@@ -105,11 +105,8 @@ body
 a
   text-decoration none
 h1, h4, p
+  color black
   margin 0px
-.content
-  max-width 960px
-  margin 0 auto
-  padding-top 55px
 .fade-enter-active, .fade-leave-active
   transition all .2s ease
 .fade-enter, .fade-leave-active
@@ -121,3 +118,7 @@ h1, h4, p
 .flex1
   flex 1  
 </style>
+
+.content
+  max-width 960px
+  margin 0 auto

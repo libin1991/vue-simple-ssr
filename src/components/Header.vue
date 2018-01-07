@@ -1,14 +1,14 @@
 <template>
   <header class="app-header">
     <nav>
-      <router-link to="/" class="header-logo">
-        <ssr-image
+      <router-link to="/">
+        <ssr-image class="header-logo"
           :src="'icons/logo-256.png'"
           :placeholder="'icons/logo-48.png'"
-        />      
+        />
+        <h1>Vue Simple SSR</h1>      
       </router-link>
     </nav>
-    <h1>Vue Simple SSR</h1>
   </header>
 </template>
 
