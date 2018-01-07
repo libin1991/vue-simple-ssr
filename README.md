@@ -1,4 +1,4 @@
-<img align="right" width="120" height="120" src="https://github.com/kemalcany/vue-ssr-starter/blob/master/public/github/VueSimpleSSR.png?raw=true" alt="Vue Simple SSR Starter"/>
+<img align="right" width="120" height="120" src="https://github.com/kemalcany/vue-ssr-starter/blob/master/public/github/SmallGray1.svg" alt="Vue Simple SSR Starter"/>
 
 # Vue Simple SSR Starter (with Firebase)
 
@@ -12,17 +12,11 @@
 ## Features
 
 Based on [Vue Hacker News 2.0](https://github.com/vuejs/vue-hackernews-2.0) with few extra features such as:
-
 - Firebase SSR integration and deployment scripts
-
 - Unit tests with Jest and `vue-test-utils`
-
 - Workbox service worker library
-
 - Refactoring and upkeep to achieve 100% Lighthouse performance (version 2.7.0)
-
 - ESLint integrated in development
-
 - **DEMO :** To see a working demo please visit [https://vuessrtest.com](https://vuessrtest.com)
 
 ## Setup
@@ -52,11 +46,15 @@ npm test
 
 ## Notes
 
-- Run `npm run build` before `npm run deploy` to prepare chunks & bundle that are going to be deployed on FBS under /public directory
-
+- Run `npm run build` before `npm run deploy` to prepare chunks for FBS /public directory
 - `npm run deploy` command takes long time due to firebase-cli performance. [Fix](https://github.com/firebase/firebase-tools/pull/578) coming soon.
 
 ## Thanks
 
 - Initial copy was made from [Vue Hacker News 2.0](https://github.com/vuejs/vue-hackernews-2.0)
-- Test setup has been borrowed from [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)
+- Test setup has been borrowed from [vue/webpack template](https://github.com/vuejs-templates/webpack)
+
+## Contribute
+
+- This repo is under construction
+

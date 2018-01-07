@@ -1,6 +1,6 @@
 <template>
   <div class="lazy">
-    <h1>So Lazy</h1>
+    <h1>A Lazy</h1>
   </div>
 </template>
 
