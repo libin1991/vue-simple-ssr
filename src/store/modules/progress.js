@@ -20,6 +20,15 @@ const mutations = {
 const actions = {
   addImageProgress ({ commit }, imageURL) {
     commit(types.PROGRESS_ADD_IMAGE, imageURL)
+  },
+  beforeRouteEnter ({ commit }, el) {
+    el.style.opacity = 0
+  },
+  duringRouteEnter ({ commit }, el) {
+    el.style.opacity = 1
+  },
+  afterRouteEnter ({ dispatch }, el) {
+    dispatch('layout/setContent', { width: el.clientWidth, height: el.clientHeight }, {root: true})
   }
 }
 

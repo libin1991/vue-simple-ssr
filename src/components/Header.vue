@@ -46,5 +46,3 @@ export default {
   .app-header nav
     padding 16px 0px
 </style>
-
-<router-link to="'/'"><h4 class="header-home-link">Home</h4></router-link>

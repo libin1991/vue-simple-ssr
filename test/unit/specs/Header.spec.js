@@ -6,6 +6,6 @@ describe('Header.vue', () => {
     const wrapper = shallow(Header, {
       stubs: ['router-link', 'router-view']
     })
-    expect(wrapper.text()).toBe('Vue Simple SSR')
+    expect(wrapper.text()).toBe('')
   })
 })

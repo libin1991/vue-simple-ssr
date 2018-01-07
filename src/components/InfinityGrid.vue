@@ -56,7 +56,7 @@ export default {
   margin auto
   display grid
   grid-template-columns repeat(6, 1fr)
-  grid-gap 8px
+  grid-gap 4px
 .item
   box-sizing border-box
   width 100%

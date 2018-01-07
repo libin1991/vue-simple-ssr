@@ -5,8 +5,8 @@
 [![Build Status](https://travis-ci.org/kemalcany/vue-simple-ssr.svg?branch=master)](https://travis-ci.org/kemalcany/vue-simple-ssr)
 [![Coverage Status](https://coveralls.io/repos/github/kemalcany/vue-simple-ssr/badge.svg?branch=master)](https://coveralls.io/github/kemalcany/vue-simple-ssr?branch=master)
 
-<p align="center">
-  <img src="https://github.com/kemalcany/vue-ssr-starter/blob/master/public/github/LightHouseReport-04.01.2018.jpg?raw=true" alt="Vue Smp SSR LH Scores"/>
+<p align="center" style="border: 1px solid #eaecef;">
+  <img src="https://github.com/kemalcany/vue-ssr-starter/blob/master/public/github/LightHouseReport-07.01.2018.jpg?raw=true" alt="Vue Smp SSR LH Scores"/>
 </p>
 
 ## Features

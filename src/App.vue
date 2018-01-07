@@ -2,9 +2,9 @@
   <div id="app">
     <app-header/>
     <transition appear v-bind:css="false" name="fade" mode="out-in"
-      v-on:before-enter="beforeEnter"
-      v-on:enter="enter"
-      v-on:after-enter="afterEnter"
+      v-on:before-enter="(el) => $store.dispatch('progress/beforeRouteEnter', el)"
+      v-on:enter="(el, done) => {$store.dispatch('progress/duringRouteEnter', el); done()}"
+      v-on:after-enter="(el) => $store.dispatch( 'progress/afterRouteEnter', el)"
     >
       <router-view ref="content" class="content"></router-view>
     </transition>
@@ -39,6 +39,11 @@ export default {
   mounted () {
     this.listenViewport()
     this.listenScroll()
+    /*
+    document.fonts.ready.then(function () {
+      alert('All fonts in use by visible text have loaded.')
+    })
+    */
   },
 
   beforeDestroy () {
@@ -66,28 +71,6 @@ export default {
       window.addEventListener('scroll', (event) => {
         this.$store.dispatch('layout/setScrollPosition', window.scrollY)
       })
-    },
-
-    beforeEnter: function (el) {
-      // console.log('Before enter')
-      this.$bar.start()
-      el.style.opacity = 0
-    },
-    enter: function (el, done) {
-      // console.log('Enter')
-      el.style.opacity = 1
-      done()
-      /*
-      setTimeout(() => {
-        console.log('Enter done')
-        el.style.opacity = 1
-        done()
-      }, 3000);
-      */
-    },
-    afterEnter: function (el) {
-      this.$store.dispatch('layout/setContent', { width: this.$refs['content'].$el.clientWidth, height: this.$refs['content'].$el.clientHeight })
-      this.$bar.finish()
     }
   }
 }
@@ -99,6 +82,7 @@ export default {
   src url('./assets/fonts/YanoneKaffeesatz-Regular.ttf') 
   font-weight 400
   font-style normal
+  font-display block
 html
   height 100%
 body
