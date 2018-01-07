@@ -10,8 +10,9 @@
       ]"
     >
       <ssr-background
-        :src="'https://picsum.photos/1920/1080?image=' + item"
+        :src="'https://picsum.photos/960/540?image=' + item"
         :placeholder="'https://picsum.photos/192/108?image=' + item"
+        :alt="'Random placeholder image from picsum'"
         no-ratio
       />
       <p>{{item}}</p>

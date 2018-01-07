@@ -5,8 +5,9 @@
         <ssr-image class="header-logo"
           :src="'icons/logo-256.png'"
           :placeholder="'icons/logo-48.png'"
+          :alt="'Vue Simple SSR Starter'"
         />
-        <h1>Vue Simple Yes</h1>      
+        <h1>Vue Simple SSR</h1>      
       </router-link>
     </nav>
   </header>

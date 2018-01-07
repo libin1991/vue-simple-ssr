@@ -94,10 +94,14 @@ export default {
 </script>
 
 <style lang="stylus">
+@font-face 
+  font-family 'YanoneKaffeesatz'
+  src url('./assets/fonts/YanoneKaffeesatz-Regular.ttf') 
+  font-weight 400
+  font-style normal
 html
   height 100%
 body
-  font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size 16px
   font-display optional
   margin 0
@@ -107,18 +111,9 @@ a
 h1, h4, p
   color black
   margin 0px
+  font-family 'YanoneKaffeesatz'
 .fade-enter-active, .fade-leave-active
   transition all .2s ease
 .fade-enter, .fade-leave-active
   opacity 0
-
-.is-flexHorizontal
-  display flex
-  flex-direction horizontal
-.flex1
-  flex 1  
 </style>
-
-.content
-  max-width 960px
-  margin 0 auto
