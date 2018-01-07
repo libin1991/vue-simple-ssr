@@ -3,7 +3,7 @@
     <nav>
       <router-link to="/">
         <ssr-image class="header-logo"
-          :src="'icons/logo-256.png'"
+          :src="'icons/logo.svg'"
           :placeholder="'icons/logo-48.png'"
           :alt="'Vue Simple SSR Starter'"
         />
@@ -39,9 +39,9 @@ export default {
     text-align center
     background rgba(255,255,255,0.5)
 .header-logo
-  width 128px
+  width 80px
   display block
-  margin 16px auto
+  margin 0px auto
   box-shadow 0 8px 6px -6px black
 @media (max-width 960px)
   .app-header nav

@@ -13,7 +13,7 @@
     "test": "npm run test:unit",
     "test:unit": "jest --config test/unit/jest.conf.js --coverage",
     "deploy": "node build/copy-firebase-resources && firebase deploy",
-    "utils:lint": "eslint --ext .js, .vue src",
+    "utils:lint": "eslint --ext .js,.vue src",
     "utils:coverage": "coveralls < ./test/unit/coverage/lcov.info"
   },
   "engines": {
