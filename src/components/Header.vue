@@ -41,7 +41,8 @@ export default {
 .header-logo
   width 128px
   display block
-  margin 0px auto
+  margin 16px auto
+  box-shadow 0 8px 6px -6px black
 @media (max-width 960px)
   .app-header nav
     padding 16px 0px
