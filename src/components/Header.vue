@@ -6,7 +6,7 @@
           :src="'icons/logo-256.png'"
           :placeholder="'icons/logo-48.png'"
         />
-        <h1>Vue Simple SSR</h1>      
+        <h1>Vue Simple Yes</h1>      
       </router-link>
     </nav>
   </header>
@@ -36,6 +36,7 @@ export default {
     padding 0px 0px
   h1
     text-align center
+    background rgba(255,255,255,0.5)
 .header-logo
   width 128px
   display block
