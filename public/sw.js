@@ -27,16 +27,16 @@ const fileManifest = [
     "revision": "10691acb5521bcef21406d43b9f242bf"
   },
   {
-    "url": "/dist/components-infinity-grid.1cec2152b3b1412f0501.js",
-    "revision": "e2b79d2ab6af763cf8eb826f44145835"
+    "url": "/dist/components-infinity-grid.cac632ec95d626c9a4cd.js",
+    "revision": "cc67b25210ad86a0d72fac13936664c8"
   },
   {
     "url": "/dist/components-info-box.ef4f1ff2c9bdf398e958.js",
     "revision": "686a8601c7a2b8a871cdec17c325f540"
   },
   {
-    "url": "/dist/manifest.eb94c1fb19bc1f6a02ff.js",
-    "revision": "b4b149e424a5fa4e5a01643c549d2dec"
+    "url": "/dist/manifest.d01e518cd35727aaaa19.js",
+    "revision": "36c6fac08d38a8ed343a261b74c96970"
   },
   {
     "url": "/dist/modules-ssr-progressive-background.69c37e275437ff9de77d.js",
@@ -61,3 +61,4 @@ const workboxSW = new self.WorkboxSW({
   "clientsClaim": true
 });
 workboxSW.precache(fileManifest);
+workboxSW.router.registerRoute(/\//, workboxSW.strategies.staleWhileRevalidate({}), 'GET');

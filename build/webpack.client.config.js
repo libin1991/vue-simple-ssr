@@ -40,11 +40,17 @@ const config = merge(base, {
 if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
     new WorkboxPlugin({
-      globPatterns: ['**/*.{html,css,js,jpg,png,svg,tff}'],
+      globPatterns: ['**/*.{html,css,js,jpg,png,svg,ttf}'],
       globDirectory: path.resolve(__dirname, '../dist'),
       swDest: path.join(path.resolve(__dirname, '../public'), 'sw.js'),
       clientsClaim: true,
-      skipWaiting: true
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: new RegExp('/'),
+          handler: 'staleWhileRevalidate'
+        }            
+      ]      
     })
   )
 }
